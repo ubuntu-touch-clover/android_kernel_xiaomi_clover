@@ -612,7 +612,8 @@ static int __init skip_initramfs_param(char *str)
 {
 	if (*str)
 		return 0;
-	do_skip_initramfs = 1;
+	// Halium : always boot to ramdisk
+	do_skip_initramfs = 0;
 	return 1;
 }
 __setup("skip_initramfs", skip_initramfs_param);

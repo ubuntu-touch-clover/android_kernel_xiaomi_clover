@@ -4329,6 +4329,7 @@ static int mdss_fb_set_par(struct fb_info *info)
 	if (!IS_ERR_VALUE(old_format)) {
 		if (old_format != mfd->panel_info->out_format)
 			mfd->panel_reconfig = true;
+			mfd->panel_info->out_format = old_format;
 	}
 
 	if (mfd->panel_reconfig || (mfd->fb_imgType != old_imgType)) {
